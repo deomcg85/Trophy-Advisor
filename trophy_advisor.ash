@@ -203,7 +203,7 @@ void hr() {
 }
 void section(string t, string c) {
     print_html("");
-    print_html("<b><font color='" + c + "' " + t + "</font></b>");
+    print_html("<font color='" + c + "' size='+1'><b>" + t + "</b></font>");
     hr();
 }
 void tip(int num, string name, string tag, string advice) {
