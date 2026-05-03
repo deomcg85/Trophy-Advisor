@@ -11,14 +11,6 @@ Best run **aftercore**, after releasing King Ralph from the prism.
 1. Download `trophy_advisor.ash`
 2. Place it in your KoL Mafia `scripts/` folder
 
-### SVN
-
-Paste into the KoL Mafia CLI:
-
-```
-svn checkout https://github.com/YOUR_USERNAME/kol-trophy-advisor/trunk/scripts
-```
-
 ## Usage
 
 Open the KoL Mafia CLI and type:
