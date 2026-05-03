@@ -10,7 +10,6 @@
 // ================================================================
 
 boolean G_VERBOSE  = false;
-boolean G_SHOW_RUN = false;
 int G_HAVE=0; int G_READY=0; int G_EASY=0;
 int G_MOD=0;  int G_HARD=0;  int G_SKIP=0;
 
@@ -212,7 +211,6 @@ void tip(int num, string name, string tag, string advice) {
     else if (tag == "EASY")     { col = "#9944cc"; G_EASY++;  }
     else if (tag == "MODERATE") { col = "#4477cc"; G_MOD++;   }
     else if (tag == "GRIND")    { col = "#339966"; G_HARD++;  }
-    else if (tag == "RUN")      { col = "#226644"; G_HARD++;  }
     else if (tag == "SEASONAL") { col = "#777799"; G_MOD++;   }
     else                        { col = "#555566"; G_SKIP++;  }
     print_html("<font color='" + col + "'><b>[" + tag + "]</b></font> <b>#" + num + " - " + name + "</b>");
@@ -259,7 +257,6 @@ void main(string args) {
 
     string la = to_lower_case(args);
     G_VERBOSE  = contains_text(la,"verbose") || contains_text(la,"-v") || contains_text(la,"all");
-    G_SHOW_RUN = contains_text(la,"run") || contains_text(la,"all");
 
     // Determine if in a run (avoid in_ronin() which may not exist)
     boolean in_hc   = in_hardcore();
@@ -272,7 +269,6 @@ void main(string args) {
     // Warm the cache now so progress is visible
     _trophy_cache = visit_url("trophies.php");
     if (in_run) print_html("<font color='#ffaa44'>Currently in " + (in_hc ? "Hardcore" : "Ronin") + ".</font>");
-    if (!G_SHOW_RUN) print_html("<font color='#888888'>Tip: add 'run' argument to see ascension planning section.</font>");
 
     // ============================================================
     // SECTION 1 — READY TO BUY
@@ -666,54 +662,6 @@ void main(string args) {
     if (!chk(119,"Extended Capacity"))
         tip(119,"Extended Capacity","GRIND","Consume 50 glasses of electric Kool-Aid while Electric, Kool is active (state-based).");
 
-    // ============================================================
-    // SECTION 5 — ASCENSION RUNS (optional flag)
-    // ============================================================
-    if (G_SHOW_RUN || in_run) {
-        section("ASCENSION RUN - Plan Your Next Run", "#226644");
-        print_html("<font color='#888888'><i>Buy BEFORE ascending. Hardcore (*) trophies: buy before freeing King Ralph!</i></font>");
-
-        if (!chk(1,"Little Boat"))   tip(1,"Little Boat","RUN","Take 100 shore trips in a single ascension.");
-        if (!chk(2,"Big Boat"))      tip(2,"Big Boat","RUN","Take 1000 shore trips in a single ascension. Very adventure-intensive.");
-        if (!chk(4,"100 Pound Load")) tip(4,"100 Pound Load","RUN","Familiars totalling 100 lbs in one run (weight buffs count).");
-        if (!chk(5,"300 Pound Load")) tip(5,"300 Pound Load","RUN","Familiars totalling 300 lbs in one run.");
-        if (!chk(8,"Palindrophy"))   tip(8,"Palindrophy","RUN","Build a Pagoda at campsite (pagoda tat paper + stick of firewood). Buy before ascending.");
-        if (!chk(14,"Easy Come Easy Go")) tip(14,"Easy Come Easy Go","RUN","Discard a pretty flower (from A Fishing Hole) during a run.");
-        if (!chk(17,"Black Hole Terrarium")) tip(17,"Black Hole Terrarium","RUN","Familiars totalling 500 lbs in one run.");
-        if (!chk(21,"Gadget Inspector")) tip(21,"Gadget Inspector","RUN","Collect 10 clockwork keys from Thugnderdome in one run.");
-        if (!chk(22,"Boss Boss"))    tip(22,"Boss Boss","RUN","Defeat all 4 main bosses using Super-Secret Canadian Mind-Control Device OR Heartbreaker Hotel at 11.");
-        if (!chk(24,"Gourdcore"))    tip(24,"Gourdcore","RUN","(*) Hardcore: Defend the Gourd 20 times. Buy before freeing King Ralph!");
-        if (!chk(25,"Let My Bugbears Go!")) tip(25,"Let My Bugbears Go!","RUN","Receive 'One Day in the Life' adventure (Big Brother in Felonia).");
-        if (!chk(31,"Brass Bowling Trophy Trophy")) tip(31,"Brass Bowling Trophy Trophy","RUN","Find the trophy on the mantel in the Strange Leaflet adventure.");
-        if (!chk(35,"Golden Meat Stack")) tip(35,"Golden Meat Stack","RUN","(*) Hardcore: Obtain 1M Meat in one run. Buy before freeing King Ralph!");
-        if (!chk(39,"Festive Dismemberment")) tip(39,"Festive Dismemberment","RUN","[SEASONAL+RUN] Use Knob Goblin firecracker on July 4th during a run.");
-        if (!chk(41,"Scourge of Seals"))   tip(41,"Scourge of Seals","RUN","Reach level 30 as Seal Clubber.");
-        if (!chk(42,"Tzar of Turtles"))    tip(42,"Tzar of Turtles","RUN","Reach level 30 as Turtle Tamer.");
-        if (!chk(43,"Potentate of Pasta")) tip(43,"Potentate of Pasta","RUN","Reach level 30 as Pastamancer.");
-        if (!chk(44,"Sauciest Saucier"))   tip(44,"Sauciest Saucier","RUN","Reach level 30 as Sauceror.");
-        if (!chk(45,"Duke of Disco"))      tip(45,"Duke of Disco","RUN","Reach level 30 as Disco Bandit.");
-        if (!chk(46,"Maestro of Mariachi"))tip(46,"Maestro of Mariachi","RUN","Reach level 30 as Accordion Thief.");
-        if (!chk(105,"And My Axe"))        tip(105,"And My Axe","RUN","Reach level 30 as Avatar of Boris.");
-        if (!chk(114,"Cosmic Thing"))      tip(114,"Cosmic Thing","RUN","Reach level 30 as Avatar of Jarlsberg.");
-        if (!chk(137,"Cool Guy"))          tip(137,"Cool Guy","RUN","Reach level 30 as Avatar of Sneaky Pete.");
-        if (!chk(47,"The Butler Did It"))  tip(47,"The Butler Did It","RUN","Use Wizard of Ego quest reward 30 times in one run.");
-        if (!chk(48,"Slapstick"))          tip(48,"Slapstick","RUN","Discard a banana peel and trigger Schadenfreude adventure 3 times in one run.");
-        if (!chk(50,"The Right Tool For The Job")) tip(50,"The Right Tool For The Job","RUN","Spend 100 adventures in Haunted Bathroom with gnollish autoplunger equipped.");
-        if (!chk(58,"Bringer of Storms"))  tip(58,"Bringer of Storms","RUN","Multi-use 100 chaos butterflies in one run.");
-        if (!chk(60,"I Love A Parade"))    tip(60,"I Love A Parade","RUN","Multi-use 11 handfuls of confetti in one run.");
-        if (!chk(63,"Extinctionist"))      tip(63,"Extinctionist","RUN","Kill each Dungeon of Doom monster 120 times in one run. Very adventure-heavy.");
-        if (!chk(68,"Desert Wind"))        tip(68,"Desert Wind","RUN","Multi-use 29 palm-frond fans in one run.");
-        if (!chk(81,"The One That Didn't Get Away")) tip(81,"The One That Didn't Get Away","RUN","Defeat a Trophyfish in one run (fishing hole random encounter).");
-        if (!chk(84,"Evil's Okay in My Book")) tip(84,"Evil's Okay in My Book","RUN","Become A Little Bit Evil OR use Perpetrate Mild Evil 13 times in a run.");
-        if (!chk(85,"A Little Help From My Friends")) tip(85,"A Little Help From My Friends","RUN","Receive Cold-Blooded Warm Fuzzies buff 30 times in a run.");
-        if (!chk(86,"Dancing With the Stars")) tip(86,"Dancing With the Stars","RUN","Use all 6 rave combos in a single fight (Disco Bandit).");
-        if (!chk(88,"Spaghettihose"))      tip(88,"Spaghettihose","RUN","Cast Canticle of Carboloading 10 days in a row, eat no pasta until day 10 (Pastamancer).");
-        if (!chk(94,"The Wrong Place at the Right Time")) tip(94,"The Wrong Place at the Right Time","RUN","Defeat nemeses in order SC>TT>P>S>DB>AT across 6 ascensions.");
-        if (!chk(98,"Buzzkill"))           tip(98,"Buzzkill","RUN","Wear 30 Bs in combat during a Bees Hate You challenge path run.");
-        if (!chk(123,"Purity of Essence")) tip(123,"Purity of Essence","RUN","Join each clique (Moxie/Muscle/Mysticality), one per ascension.");
-        if (!chk(151,"Tentacle Tickler"))  tip(151,"Tentacle Tickler","RUN","Defeat 666 Eldritch Tentacles in a single ascension. Buy before ascending.");
-        if (!chk(163,"HIGH SCORE"))        tip(163,"HIGH SCORE","RUN","Earn 100,000 points in the 8-Bit Realm in one ascension.");
-    }
 
     // ============================================================
     // SECTION 6 — SEASONAL
@@ -722,8 +670,8 @@ void main(string args) {
 
     if (!chk(32,"Look, Ma! No Pants!"))
         tip(32,"Look, Ma! No Pants!","SEASONAL","New Year's Day only - no pants equipped on Jan 1st. Remember each year!");
-    if (!chk(39,"Festive Dismemberment") && !G_SHOW_RUN)
-        tip(39,"Festive Dismemberment","SEASONAL","[Also a RUN trophy] Use Knob Goblin firecracker on July 4th during an ascension.");
+    if (!chk(39,"Festive Dismemberment"))
+        tip(39,"Festive Dismemberment","SEASONAL","Use Knob Goblin firecracker on July 4th. Must be done during an ascension run.");
     if (!chk(158,"Traditional Crimbo"))
         tip(158,"Traditional Crimbo","SEASONAL","Eat primitive candy cane + runny fermented egg + oldcake in same day (Crimbo). State-based - buy same day.");
     if (!chk(159,"Steak and a Beer, Eh?"))
@@ -752,6 +700,6 @@ void main(string args) {
     print_html("<b>Grind/Run:      </b><font color='#226644'>" + G_HARD + "</font>");
     print_html("<b>Unobtainable:   </b><font color='#555566'>" + G_SKIP + "</font>");
     print_html("");
-    print_html("<font color='#666666'>Usage: ash trophy_advisor.ash [verbose] [run] [all]</font>");
+    print_html("<font color='#666666'>Usage: ash trophy_advisor.ash [verbose | all]</font>");
     print_html("<font color='#555555'>Wiki: https://kol.coldfront.net/thekolwiki/index.php/Trophies</font>");
 }
