@@ -685,7 +685,7 @@ void main(string args) {
     // SECTION 7 — UNOBTAINABLE
     // ============================================================
     section("UNOBTAINABLE", "#555566");
-    tip(27,"This Lousy Trophy","SKIP","Available June 9 2005 only. Gone forever.");
+    if (!chk(27,"This Lousy Trophy")) tip(27,"This Lousy Trophy","SKIP","Available June 9 2005 only. Gone forever.");
     tip(145,"(Trophy #145)","SKIP","Dev confirmed: not currently acquirable.");
 
     // ============================================================
