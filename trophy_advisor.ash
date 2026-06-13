@@ -663,6 +663,90 @@ void main(string args) {
         tip(119,"Extended Capacity","GRIND","Consume 50 glasses of electric Kool-Aid while Electric, Kool is active (state-based).");
 
 
+    // ================================================================
+    // SECTION 5a — MISSING STATE-BASED / COLLECTION TROPHIES
+    // ================================================================
+    if (!chk(19,"Tiny Plastic Trophy"))
+        tip(19,"Tiny Plastic Trophy","GRIND","Have all 32 Tiny Plastic Series 1 figurines in your Display Case. Buy or farm from monsters.");
+    if (!chk(69,"Two-Tiered Tiny Plastic Trophy"))
+        tip(69,"Two-Tiered Tiny Plastic Trophy","GRIND","Have all 64 Tiny Plastic Series 2 figurines in your Display Case.");
+    if (!chk(113,"Three-Tiered Tiny Plastic Trophy"))
+        tip(113,"Three-Tiered Tiny Plastic Trophy","GRIND","Have all 32 Tiny Plastic Series 3 figurines in your Display Case.");
+    if (!chk(97,"Had to Have Caught Them All"))
+        tip(97,"Had to Have Caught Them All","GRIND","Have all 15 Pokemann figurines in your Display Case. Farm Dungeons of Doom or buy from mall.");
+    if (!chk(108,"Fantastic Voyager"))
+        tip(108,"Fantastic Voyager","GRIND","Have all 11 Microplushies in your Display Case (from Tales of Spelunking content).");
+    if (!chk(83,"Hunter In Darkness"))
+        tip(83,"Hunter In Darkness","GRIND","Kill 5 wumpii in a row without dying - state-based, buy immediately after the 5th kill.");
+    if (!chk(90,"Septuple Platinum"))
+        tip(90,"Septuple Platinum","GRIND","Make 7 unique Accordion Thief buff recordings in one day - state-based, buy same day.");
+    if (!chk(103,"Moving Target"))
+        tip(103,"Moving Target","GRIND","Roll a d12 exactly 1 higher than the last qualifying player. Check the forums for the current target number.");
+    if (!chk(109,"Haggis Haggis Haggis Haggis Haggis"))
+        tip(109,"Haggis Haggis Haggis Haggis Haggis","GRIND","Cast Haggis Kick wearing haggis socks + Mr. Haggis with Sheepskinned, Highland Sheen and Hagg-ard effects active.");
+    if (!chk(110,"Now You've Tasted Everything"))
+        tip(110,"Now You've Tasted Everything","GRIND","Have all 5 Magic Tongue effects active simultaneously - state-based, from the Magic Tongue item.");
+    if (!chk(115,"Right Outfit, Wrong Place"))
+        tip(115,"Right Outfit, Wrong Place","GRIND","Equip all at once: clown wig, spork, plush hamsterpus, giant gym membership card, white snakeskin duster, leotarrrd, Choker of the Ultragoth, oven mitts.");
+    if (!chk(121,"Cruising For Six Bruisings"))
+        tip(121,"Cruising For Six Bruisings","GRIND","Need First Blood Kiwi + Shepherd's Breath effects AND Ghost shawl + weedy skirt + Dreadsylvania Auditor's badge + moon-amber necklace equipped simultaneously.");
+    if (!chk(127,"True Believer"))
+        tip(127,"True Believer","GRIND","Have all 12 disco horoscope effects active simultaneously - state-based. Requires zodiac-themed items from the Gnomad Camp area.");
+    if (!chk(139,"Omni-Cosplay"))
+        tip(139,"Omni-Cosplay","GRIND","Equip returned Thinknerd package items: crying statue earrings, Gary Claybender's Time Screwer, plastic Duskwalker necklace, plastic replica blaster pistol, Space Tourist palmdoctor.");
+    if (!chk(165,"Zoo Graft-on"))
+        tip(165,"Zoo Graft-on","GRIND","Attach all 11 Z is for Zootomist familiars to your body - state-based, from Zootomist content.");
+    if (!chk(166,"Mad Hattest"))
+        tip(166,"Mad Hattest","GRIND","Equip 100+ hats simultaneously in Hat Trick - state-based. Requires Hat Trick skill and 100+ different hats.");
+
+    // ================================================================
+    // SECTION 5b — ASCENSION TROPHIES (require a dedicated run)
+    // ================================================================
+    section("ASCENSION - Requires a Dedicated Run", "#339966");
+    print_html("<font color='#888888'><i>Plan these for a future run. Purchase BEFORE ascending (or before freeing King Ralph for hardcore ones marked *).</i></font>");
+
+    if (!chk(1,"Little Boat"))    tip(1,"Little Boat","GRIND","Take 100 shore trips in a single ascension.");
+    if (!chk(2,"Big Boat"))       tip(2,"Big Boat","GRIND","Take 1000 shore trips in a single ascension. Very adventure-intensive.");
+    if (!chk(4,"100 Pound Load")) tip(4,"100 Pound Load","GRIND","Have familiars totalling 100 lbs in a single run.");
+    if (!chk(5,"300 Pound Load")) tip(5,"300 Pound Load","GRIND","Have familiars totalling 300 lbs in a single run.");
+    if (!chk(8,"Palindrophy"))    tip(8,"Palindrophy","GRIND","Build a Pagoda at campsite during a run (pagoda tat paper + stick of firewood).");
+    if (!chk(14,"Easy Come Easy Go")) tip(14,"Easy Come Easy Go","GRIND","Discard a pretty flower (from A Fishing Hole) during a run.");
+    if (!chk(16,"Weeping Pizza")) tip(16,"Weeping Pizza","GRIND","Eat 5 white chocolate and tomato pizzas in a single run.");
+    if (!chk(17,"Black Hole Terrarium")) tip(17,"Black Hole Terrarium","GRIND","Have familiars totalling 500 lbs in a single run.");
+    if (!chk(21,"Gadget Inspector")) tip(21,"Gadget Inspector","GRIND","Collect 10 clockwork keys from Thugnderdome in a single run.");
+    if (!chk(22,"Boss Boss"))     tip(22,"Boss Boss","GRIND","Defeat all 4 main bosses with Super-Secret Canadian Mind-Control Device or Heartbreaker Hotel at 11, in one run.");
+    if (!chk(24,"Gourdcore"))     tip(24,"Gourdcore","GRIND","* Defend the Gourd 20 times in a single hardcore run. Buy before freeing King Ralph!");
+    if (!chk(25,"Let My Bugbears Go!")) tip(25,"Let My Bugbears Go!","GRIND","Receive the 'One Day in the Life' adventure (Big Brother in Felonia) during a run.");
+    if (!chk(31,"Brass Bowling Trophy Trophy")) tip(31,"Brass Bowling Trophy Trophy","GRIND","Find the trophy on the mantel in the Strange Leaflet adventure during a run.");
+    if (!chk(35,"Golden Meat Stack")) tip(35,"Golden Meat Stack","GRIND","* Obtain 1M Meat in a single hardcore run. Buy before freeing King Ralph!");
+    if (!chk(41,"Scourge of Seals"))    tip(41,"Scourge of Seals","GRIND","Reach level 30 as a Seal Clubber in a single ascension.");
+    if (!chk(42,"Tzar of Turtles"))     tip(42,"Tzar of Turtles","GRIND","Reach level 30 as a Turtle Tamer in a single ascension.");
+    if (!chk(43,"Potentate of Pasta"))  tip(43,"Potentate of Pasta","GRIND","Reach level 30 as a Pastamancer in a single ascension.");
+    if (!chk(44,"Sauciest Saucier"))    tip(44,"Sauciest Saucier","GRIND","Reach level 30 as a Sauceror in a single ascension.");
+    if (!chk(45,"Duke of Disco"))       tip(45,"Duke of Disco","GRIND","Reach level 30 as a Disco Bandit in a single ascension.");
+    if (!chk(46,"Maestro of Mariachi")) tip(46,"Maestro of Mariachi","GRIND","Reach level 30 as an Accordion Thief in a single ascension.");
+    if (!chk(105,"And My Axe"))         tip(105,"And My Axe","GRIND","Reach level 30 as an Avatar of Boris in a single ascension.");
+    if (!chk(114,"Cosmic Thing"))       tip(114,"Cosmic Thing","GRIND","Reach level 30 as an Avatar of Jarlsberg in a single ascension.");
+    if (!chk(137,"Cool Guy"))           tip(137,"Cool Guy","GRIND","Reach level 30 as an Avatar of Sneaky Pete in a single ascension.");
+    if (!chk(47,"The Butler Did It"))   tip(47,"The Butler Did It","GRIND","Use the Wizard of Ego quest reward 30 times in a single run.");
+    if (!chk(48,"Slapstick"))           tip(48,"Slapstick","GRIND","Discard a banana peel and trigger the Schadenfreude adventure 3 times in one run.");
+    if (!chk(50,"The Right Tool For The Job")) tip(50,"The Right Tool For The Job","GRIND","Spend 100 adventures in Haunted Bathroom with gnollish autoplunger equipped in one run.");
+    if (!chk(58,"Bringer of Storms"))   tip(58,"Bringer of Storms","GRIND","Use 100 chaos butterflies in a single run.");
+    if (!chk(60,"I Love A Parade"))     tip(60,"I Love A Parade","GRIND","Multi-use 11 handfuls of confetti in a single run.");
+    if (!chk(63,"Extinctionist"))       tip(63,"Extinctionist","GRIND","Kill each Dungeon of Doom monster 120 times in a single run. Very adventure-heavy.");
+    if (!chk(68,"Desert Wind"))         tip(68,"Desert Wind","GRIND","Multi-use 29 palm-frond fans in a single run.");
+    if (!chk(81,"The One That Didn't Get Away")) tip(81,"The One That Didn't Get Away","GRIND","Defeat a Trophyfish during a run (fishing hole encounter).");
+    if (!chk(84,"Evil's Okay in My Book")) tip(84,"Evil's Okay in My Book","GRIND","Become A Little Bit Evil OR use Perpetrate Mild Evil 13 times in a single run.");
+    if (!chk(85,"A Little Help From My Friends")) tip(85,"A Little Help From My Friends","GRIND","Receive Cold-Blooded Warm Fuzzies buff 30 times in a single run.");
+    if (!chk(86,"Dancing With the Stars")) tip(86,"Dancing With the Stars","GRIND","Use all 6 rave combos in a single fight during a run (Disco Bandit only).");
+    if (!chk(88,"Spaghettihose"))       tip(88,"Spaghettihose","GRIND","Pastamancer: cast Canticle of Carboloading daily for 10 days, eating no pasta until day 10.");
+    if (!chk(94,"The Wrong Place at the Right Time")) tip(94,"The Wrong Place at the Right Time","GRIND","Defeat nemeses in order SC->TT->P->S->DB->AT across 6 separate ascensions.");
+    if (!chk(98,"Buzzkill"))            tip(98,"Buzzkill","GRIND","Wear 30 Bs in combat during a Bees Hate You challenge path run.");
+    if (!chk(123,"Purity of Essence"))  tip(123,"Purity of Essence","GRIND","Join each high school clique (Moxie/Muscle/Mysticality), one per ascension (3 runs minimum).");
+    if (!chk(151,"Tentacle Tickler"))   tip(151,"Tentacle Tickler","GRIND","Defeat 666 Eldritch Tentacles in a single ascension.");
+    if (!chk(153,"Gelatinous Hubris"))  tip(153,"Gelatinous Hubris","GRIND","Learn all 125 Gelatinous Noob skills in a single ascension - state-based, buy before leaving that run.");
+    if (!chk(163,"HIGH SCORE"))         tip(163,"HIGH SCORE","GRIND","Earn 100,000 points in the 8-Bit Realm in a single ascension.");
+
     // ============================================================
     // SECTION 6 — SEASONAL
     // ============================================================
