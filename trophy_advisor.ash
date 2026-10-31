@@ -5,8 +5,7 @@
 // USAGE:
 //   ash trophy_advisor.ash
 //   ash trophy_advisor.ash verbose   — also list owned trophies
-//   ash trophy_advisor.ash run       — add ascension planning hints
-//   ash trophy_advisor.ash all       — everything
+//   ash trophy_advisor.ash all       — everything (same as verbose)
 // ================================================================
 
 boolean G_VERBOSE  = false;
@@ -386,7 +385,7 @@ void main(string args) {
         tip(28,"Three-Tiered Trophy","EASY","Eat a three-tiered wedding cake. Craft or buy from mall (~1k meat).");
 
     if (!chk(152,"LOVE, LOVE, LOVE"))
-        tip(152,"LOVE, LOVE, LOVE","EASY","Solve the L.O.V. Exit puzzle in The Neverending Party.");
+        tip(152,"LOVE, LOVE, LOVE","EASY","Solve the L.O.V. Exit puzzle in the Tunnel of L.O.V.E. (Wrong Side of the Tracks, Seaside Town). Skip ALL fights and take nothing through the entire tunnel; a word puzzle waits at the exit.");
 
     if (!chk(129,"Very Like a Whale"))
         tip(129,"Very Like a Whale","EASY","Make a bowl of petunias: porcelain bowl + deep-sea petunias (both from The Sea).");
@@ -536,7 +535,7 @@ void main(string args) {
 
     if (!chk(23,"Jack of Several Trades")) {
         int gs=0;
-        if(have_skill_rt("Torso Awaregness"))         gs++;
+        if(have_skill_rt("Torso Awaregness") || have_skill_rt("Torso Awareness")) gs++;
         if(have_skill_rt("Gnefarious Pickpocketing")) gs++;
         if(have_skill_rt("Powers of Observatiogn"))   gs++;
         if(have_skill_rt("Cosmic Ugnderstanding"))    gs++;
@@ -781,7 +780,7 @@ void main(string args) {
     print_html("<b>Ready to buy:   </b><font color='#ccaa00'>" + G_READY + "</font>  &lt;-- visit Trophy Hut NOW");
     print_html("<b>Easy wins:      </b><font color='#9944cc'>" + G_EASY + "</font>");
     print_html("<b>Moderate:       </b><font color='#4477cc'>" + G_MOD + "</font>");
-    print_html("<b>Grind/Run:      </b><font color='#226644'>" + G_HARD + "</font>");
+    print_html("<b>Grind/Ascension:</b><font color='#226644'>" + G_HARD + "</font>");
     print_html("<b>Unobtainable:   </b><font color='#555566'>" + G_SKIP + "</font>");
     print_html("");
     print_html("<font color='#666666'>Usage: ash trophy_advisor.ash [verbose | all]</font>");
